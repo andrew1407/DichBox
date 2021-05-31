@@ -12,7 +12,7 @@ const logger: ILogger = new Logger(logDir, printable);
 
 export const viewPath: string = path.join(__dirname, '..', 'dist', 'view');
 
-export const getViewHandler = (req: Request, res: Response): void => {
+export const viewHandler = (req: Request, res: Response): void => {
   const root: string = viewPath;
   const viewEntry: string = 'index.html';
   logger.log({
