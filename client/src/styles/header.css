@@ -6,7 +6,7 @@ body {
   display: flex;
   justify-content: space-between;
   background-color: black;
-  font-family: "DynarShadowC";
+  font-family: "Russo One";
   border-bottom: 7px solid rgb(75, 73, 73);
 }
 
@@ -102,8 +102,8 @@ body {
 }
 
 @font-face {
-  font-family: "DynarShadowC";
-  src: url("./fonts/15294.otf");
+  font-family: "Russo One";
+  src: url("./fonts/RussoOne-Regular.ttf");
 }
 
 #header-hidden {
