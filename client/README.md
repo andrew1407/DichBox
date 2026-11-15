@@ -7,17 +7,25 @@
 ## Setup
 
 Firstly, install dependencies:
-> npm i
+```bash
+npm i
+```
 
 Create **.env** file ([example](https://github.com/Andrew1407/DichBox/blob/main/client/.env.example)).
 
 Run tests:
-> npm test
+```bash
+npm test
+```
 
 Run client in development mode:
-> npm start
+```bash
+npm start
+```
 
 Build *./src* with:
-> npm run build
+```bash
+npm run build
+```
 
 The artefact will be built in *server/dist* directory.

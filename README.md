@@ -1,7 +1,7 @@
 # DichBox
 
 <p align="center">
-  <a target="blank"><img src="https://raw.githubusercontent.com/Andrew1407/DichBox/main/client/src/styles/imgs/full-logo.png" width="140" alt="DichBox Logo" /></a>
+  <a href="https://andrew1407.github.io/DichBox/#/dich_tester" target="_blank" title="Open the showcase"><img src="https://raw.githubusercontent.com/Andrew1407/DichBox/main/client/src/styles/imgs/full-logo.png" width="140" alt="DichBox Logo" /></a>
 </p>
 
 Storage web-service for editing boxes (storages) and their entries.
@@ -17,7 +17,7 @@ Storage web-service for editing boxes (storages) and their entries.
 ## Showcase
 
 A static demo of the browser client is published to GitHub Pages
-(`.github/workflows/pages.yml`): https://andrew1407.github.io/DichBox/
+(`.github/workflows/pages.yml`): https://andrew1407.github.io/DichBox/#/dich_tester
 
 It runs the full client UI without a server: API requests are answered by an
 in-browser imitation (`client/src/demo`), with two demo users (the first one is
@@ -25,9 +25,12 @@ signed in) and seeded boxes with text files and images. All data lives in memory
 so reloading the page restores the initial state.
 
 Build/run it locally (Node.js 26):
-> cd client && npm ci && npm run build:demo   # output: client/demo-dist
-
-> cd client && npm run start:demo
+```bash
+cd client
+npm ci
+npm run build:demo   # static build in client/demo-dist
+npm run start:demo   # or a dev server with the showcase
+```
 
 ---
 
@@ -35,25 +38,35 @@ Build/run it locally (Node.js 26):
 
 ### Setup
 
-To run DichBox using docker-compose create environment file with fields:
+To run DichBox using docker compose create environment file with fields:
   + **PORT** - app server port
   + **DB_USERNAME** - database owner
   + **DB_PASSWD** - user's password
   + **DB_NAME** - database name
 
 Run test container (and database one) with specified environment file:
-> docker-compose -f docker-compose.test.yaml --env-file [environment file path] up --exit-code-from test; docker container rm dichbox_test_1 && docker rmi dichbox_test:latest
+```bash
+docker compose -f docker-compose.test.yaml --env-file [environment file path] up --build --exit-code-from test
+docker compose -f docker-compose.test.yaml --env-file [environment file path] down --rmi local -v
+```
 
 For example (using .env file from the server):
-> docker-compose -f docker-compose.test.yaml --env-file ./server/.env.example up --exit-code-from test; docker container rm dichbox_test_1 && docker rmi dichbox_test:latest
+```bash
+docker compose -f docker-compose.test.yaml --env-file ./server/.env.example up --build --exit-code-from test
+docker compose -f docker-compose.test.yaml --env-file ./server/.env.example down --rmi local -v
+```
 
 ---
 
-Run docker-compose with specified environment file:
-> docker-compose --env-file [environment file path] up
+Run docker compose with specified environment file:
+```bash
+docker compose --env-file [environment file path] up
+```
 
 For example (using .env file from the server):
-> docker-compose --env-file ./server/.env.example up
+```bash
+docker compose --env-file ./server/.env.example up
+```
 
 ### Versions
 

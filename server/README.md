@@ -7,39 +7,55 @@
 ## Setup
 
 Firstly, install dependencies:
-> npm i
+```bash
+npm i
+```
 
 Create **.env** file ([example](https://github.com/Andrew1407/DichBox/blob/main/server/.env.example)).
 
 Create *DichStorage* directory using path mentioned in *.env* file (STORAGE_PATH) or create default one:
-> npm run mkstorage
+```bash
+npm run mkstorage
+```
 
 To create database use script [**model.sql**](https://github.com/Andrew1407/DichBox/blob/main/server/src/database/model.sql). Also specify database host, name and user with password in *.env* file.
 
 To run the script use *psql* command:
-> psql -U [username] -d [dbname] -f src/database/model.sql
+```bash
+psql -U [username] -d [dbname] -f src/database/model.sql
+```
 
 Or use psql environment:
-> \i src/database/model.sql
+```sql
+\i src/database/model.sql
+```
 
 ---
 
 Run tests:
-> npm test
+```bash
+npm test
+```
 
 If the server is already running the test just contects to it and executed.
 In case when the server isn't running the test creates one instance of it (during tests) and shuts it down after execution.
 
 Run server in development mode:
-> npm start
+```bash
+npm start
+```
 
 Build *./src* with:
-> npm run build
+```bash
+npm run build
+```
 
 The artefact will be built in *server/dist* directory.
 
 To run the built project use:
-> node dist [options]
+```bash
+node dist [options]
+```
 
 The flag **--test-worker** (both for dev. mode and built artefact) allows to run initial tests on one worker (and shut the server down if they are failed).
 
