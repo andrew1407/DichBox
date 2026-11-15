@@ -14,6 +14,23 @@ Storage web-service for editing boxes (storages) and their entries.
 
 ---
 
+## Showcase
+
+A static demo of the browser client is published to GitHub Pages
+(`.github/workflows/pages.yml`): https://andrew1407.github.io/DichBox/
+
+It runs the full client UI without a server: API requests are answered by an
+in-browser imitation (`client/src/demo`), with two demo users (the first one is
+signed in) and seeded boxes with text files and images. All data lives in memory,
+so reloading the page restores the initial state.
+
+Build/run it locally (Node.js 26):
+> cd client && npm ci && npm run build:demo   # output: client/demo-dist
+
+> cd client && npm run start:demo
+
+---
+
 ## Container
 
 ### Setup

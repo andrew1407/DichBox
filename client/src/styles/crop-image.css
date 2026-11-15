@@ -55,13 +55,15 @@ img.ReactCrop__image{
   background-color: black;
   font-size: 100%;
   outline: none;
-  border-color: black;
-  border-bottom: 3px solid rgb(204, 0, 255);;
+  border: none;
+  border-bottom: 3px solid rgb(204, 0, 255);
+  padding-bottom: 5px;
   color: rgb(204, 0, 255);
 }
 
 .crop-input-field > input:focus {
   border-bottom: 7px solid rgb(204, 0, 255);
+  padding-bottom: 1px; /* keeps the element height when the border thickens */
 }
 
 .crop-input-field > input {

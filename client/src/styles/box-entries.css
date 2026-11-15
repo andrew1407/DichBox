@@ -81,7 +81,7 @@
   padding: 1% 2%;
   min-width: 45%;
   outline: none;
-  border-color: black;
+  border: none;
   border-bottom: 2px solid rgb(0, 217, 255);
   background-color: black;
   color: rgb(0, 217, 255);
@@ -90,6 +90,7 @@
 #be-add-file > input[type="text"]:focus,
 #be-add-file > input[type="text"]:hover {
   border-bottom: 4px solid rgb(0, 217, 255);
+  padding-bottom: max(0px, calc(1% - 2px)); /* keeps the element height when the border thickens */
 }
 
 #be-add-file > input[type="button"] {
@@ -123,7 +124,7 @@
   font-size: 150%;
   margin-left: 3%;
   outline: none;
-  border-color: black;
+  border: none;
   border-bottom: 3px solid rgb(0, 217, 255);
   padding: 2%;
   margin-bottom: 4%;
@@ -162,4 +163,5 @@
 #entries-search > input:hover,
 #entries-search > input:focus {
   border-bottom: 5px solid rgb(0, 217, 255);
+  padding-bottom: max(0px, calc(2% - 2px)); /* keeps the element height when the border thickens */
 }

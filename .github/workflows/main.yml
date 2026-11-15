@@ -4,6 +4,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v5
       - name: containers test
-        run: docker-compose -f docker-compose.test.yaml --env-file ./server/.env.example up --exit-code-from test
+        run: docker compose -f docker-compose.test.yaml --env-file ./server/.env.example up --build --exit-code-from test
+      - name: containers cleanup
+        if: always()
+        run: docker compose -f docker-compose.test.yaml --env-file ./server/.env.example down --rmi local -v

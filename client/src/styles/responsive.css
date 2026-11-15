@@ -1,0 +1,305 @@
+/*
+  Responsive overrides, imported last in App.jsx:
+  - wider than 700px: the page fits the viewport, panels scroll inside;
+  - up to 1100px: narrow windows and tablets;
+  - up to 700px: phones (stacked layout, page scrolls).
+*/
+
+html,
+body {
+  max-width: 100%;
+}
+
+/* ---------- fit the viewport (no page scroll) on desktops and tablets ---------- */
+@media (min-width: 701px) {
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #root {
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  #main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #main-content {
+    flex: 1 1 auto;
+    height: auto;
+    min-height: 360px;
+  }
+
+  #menu,
+  #show-content {
+    max-height: none;
+  }
+
+  #show-content {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+
+  #files-list {
+    flex: 0 0 52px;
+    height: 52px;
+  }
+
+  #show-area {
+    flex: 1 1 auto;
+    min-height: 0;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  #edit-menu {
+    flex: 0 0 auto;
+    height: auto;
+  }
+
+  #edit-menu > img {
+    height: 30px;
+  }
+
+  #show-area > textarea,
+  #show-image {
+    flex: 1 1 auto;
+    min-height: 0;
+    height: auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* ---------- narrow windows / tablets ---------- */
+@media (max-width: 1100px) {
+  #header-name {
+    font-size: 190%;
+  }
+
+  #header-search {
+    font-size: 180%;
+    min-width: 0;
+    flex-shrink: 1;
+    margin-right: 3%;
+  }
+
+  #header-search > input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  #entries-search > input {
+    box-sizing: border-box;
+    max-width: 92%;
+  }
+
+  #header-search > img {
+    height: 36px;
+  }
+
+  #header-menu > img {
+    width: 60px;
+  }
+
+  #menu[style*="min-width"] {
+    min-width: 40% !important;
+    max-width: 40% !important;
+  }
+
+  #show-content {
+    min-width: 0;
+  }
+
+  #edit-menu {
+    width: fit-content;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    gap: 6px;
+    box-sizing: border-box;
+  }
+
+  #edit-menu > img {
+    height: 30px;
+  }
+
+  .nd-name {
+    font-size: 330%;
+    overflow-wrap: anywhere;
+  }
+
+  .confirm-modal {
+    left: 10%;
+    right: 10%;
+  }
+
+  .crop-modal {
+    left: 5%;
+    right: 5%;
+  }
+
+  img.ReactCrop__image {
+    max-width: 100%;
+  }
+}
+
+/* ---------- phones ---------- */
+@media (max-width: 700px) {
+  #header {
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 8px;
+    padding-bottom: 8px;
+  }
+
+  #header-name {
+    font-size: 120%;
+    margin-left: 5%;
+  }
+
+  #header-menu {
+    margin: 4px 5% 0 auto;
+  }
+
+  #header-menu > img {
+    width: 40px;
+  }
+
+  #header-search {
+    order: 3;
+    flex: 1 1 100%;
+    font-size: 130%;
+    margin: 0 6%;
+    padding: 4px 4%;
+    box-sizing: border-box;
+  }
+
+  #header-search > img {
+    height: 28px;
+  }
+
+  #main-content {
+    flex-direction: column;
+    height: auto;
+  }
+
+  #menu,
+  #menu[style] {
+    min-width: 100% !important;
+    max-width: 100% !important;
+    max-height: none;
+    overflow-y: visible;
+    border-right: none !important;
+  }
+
+  #menu > menu {
+    padding: 2% 3%;
+  }
+
+  #show-content {
+    min-height: 75vh;
+    height: 75vh;
+    max-height: none;
+    border-left: none;
+    border-top: 5px solid rgb(75, 73, 73);
+  }
+
+  #files-list {
+    height: auto;
+    min-height: 44px;
+    overflow-x: auto;
+  }
+
+  .opened-file {
+    font-size: 115%;
+    white-space: nowrap;
+  }
+
+  #edit-menu {
+    height: auto;
+    padding: 6px 8px;
+  }
+
+  #edit-menu > img {
+    height: 30px;
+  }
+
+  #show-area > textarea {
+    font-size: 110%;
+    box-sizing: border-box;
+    width: 100%;
+    height: calc(100% - 60px);
+  }
+
+  .nd-name {
+    font-size: 260%;
+  }
+
+  .nd-desc {
+    margin-left: 4%;
+    margin-right: 4%;
+    font-size: 140%;
+  }
+
+  .menu-options-list {
+    font-size: 150%;
+  }
+
+  #default-logo,
+  #entries-logo {
+    width: 40%;
+    max-width: 180px;
+  }
+
+  .edit-input,
+  .edit-desc-area {
+    font-size: 140%;
+  }
+
+  .edit-btn {
+    font-size: 140%;
+  }
+
+  .edit-field {
+    padding-bottom: 6%;
+  }
+
+  .confirm-modal {
+    left: 4%;
+    right: 4%;
+    top: 20%;
+    bottom: auto;
+    padding: 4%;
+  }
+
+  #confirm-btns > input {
+    width: 40%;
+    font-size: 150%;
+  }
+
+  .crop-modal {
+    left: 2%;
+    right: 2%;
+    padding: 3%;
+  }
+
+  #footer {
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    font-size: 110%;
+    padding: 6px 4%;
+  }
+}

@@ -128,7 +128,7 @@ export default class BoxesSMTest extends TestLogger implements ITester {
       this.boxesPath,
       ids[0].toString()
     );
-    await fs.promises.rmdir(userDirPath, { recursive: true });
+    await fs.promises.rm(userDirPath, { recursive: true, force: true });
   }
 
   private async testRenameFile(): Promise<void> {

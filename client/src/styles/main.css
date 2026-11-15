@@ -34,7 +34,7 @@ body {
   display: block;
   margin-left: 3%;
   outline: none;
-  border-color: black;
+  border: none;
   border-bottom: 3px solid rgb(0, 217, 255);
   padding: 2%;
   margin-bottom: 4%;
@@ -42,8 +42,32 @@ body {
   color: rgb(0, 217, 255);
 }
 
+/* color pickers share .edit-input: give the swatch a visible size */
+.edit-input[type="color"] {
+  box-sizing: border-box;
+  height: 48px;
+  padding: 4px 0 !important;
+  background-color: black;
+  cursor: pointer;
+}
+
+.edit-input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.edit-input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 4px;
+}
+
+.edit-input[type="color"]::-moz-color-swatch {
+  border: none;
+  border-radius: 4px;
+}
+
 .edit-input:focus {
   border-bottom: 7px solid rgb(0, 217, 255);
+  padding-bottom: max(0px, calc(2% - 4px)); /* keeps the element height when the border thickens */
 }
 
 .edit-desc-area {
@@ -76,7 +100,7 @@ body {
   font-size: 100%;
   width: 90%;
   outline: none;
-  border-color: black;
+  border: none;
   border-bottom: 3px solid rgb(0, 217, 255);
   padding: 2%;
   margin-bottom: 4%;
@@ -87,6 +111,7 @@ body {
 .sign-field > input:focus,
 .sign-field > input:hover {
   border-bottom: 7px solid rgb(0, 217, 255);
+  padding-bottom: max(0px, calc(2% - 4px)); /* keeps the element height when the border thickens */
 }
 
 .warning {

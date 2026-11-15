@@ -73,7 +73,7 @@ export default class StorageManager implements IStorageManager {
     const dirPath: string = path.join(this.storagePath, ...pathes);
     const exists: boolean = await this.exists(dirPath);
     if (exists)
-      await fs.rmdir(dirPath, { recursive: true });
+      await fs.rm(dirPath, { recursive: true, force: true });
   }
 
   protected async exists(filePath: string): Promise<boolean> {

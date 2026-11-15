@@ -38,7 +38,7 @@ export default class BaseSMTest extends TestLogger implements ITester {
   }
 
   private async removeTestDir(): Promise<void> {
-    await fs.promises.rmdir(this.logosPath, { recursive: true });
+    await fs.promises.rm(this.logosPath, { recursive: true, force: true });
   }
 
   private async testSaveLogo(): Promise<void> {

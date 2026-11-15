@@ -91,7 +91,7 @@ describe('Default tests', () => {
       expect(email).toHaveTextContent(userData.email);
       expect(signed).toHaveTextContent(userData.reg_date);
 
-      expect(notificationsNumber).toHaveStyle('color: orange');
+      expect(notificationsNumber).toHaveStyle('color: rgb(255, 165, 0)');
       checkOptions(defaultOptions, optionsExpected);
     },
     'has no user logo, not own page (follower mode)': () => {

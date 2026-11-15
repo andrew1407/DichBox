@@ -55,7 +55,7 @@ export default class LoggerTest extends TestLogger implements ITester {
     WrappedLogger.closeWriteStream();
     const logger: ILogger = new WrappedLogger(testDir, verbose);
     for (const logData of testLogs) await logger.log(logData);
-    WrappedLogger.closeWriteStream();
+    await WrappedLogger.flushWriteStream();
     const logFile: string = this.getCurrentLogName();
     const logPath: string = path.join(testDir, logFile)
     try {

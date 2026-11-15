@@ -14,7 +14,7 @@ const testFlag: string = '--test-worker';
 const includeTestWorker: boolean = process.argv.includes(testFlag);
 const TEST_WORKER: number = Number(includeTestWorker);
 
-if (cluster.isMaster) {
+if (cluster.isPrimary) {
   const forkCluster = (): void => {
     const worker: cluster.Worker = cluster.fork();
     const handleWorkerExit = (code: number): void => {

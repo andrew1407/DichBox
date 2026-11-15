@@ -22,7 +22,7 @@
   min-width: 70%;
   margin-left: 3%;
   outline: none;
-  border-color: black;
+  border: none;
   border-bottom: 3px solid rgb(0, 217, 255);
   padding: 2%;
   margin-bottom: 4%;
@@ -32,6 +32,7 @@
 
 #subs-search > input:focus {
   border-bottom: 5px solid rgb(0, 217, 255);
+  padding-bottom: max(0px, calc(2% - 2px)); /* keeps the element height when the border thickens */
 }
 
 .subs-display, .search-list-display {
@@ -84,4 +85,5 @@
 
 #subs-search > input:hover {
   border-bottom: 5px solid rgb(0, 217, 255);
+  padding-bottom: max(0px, calc(2% - 2px));
 }

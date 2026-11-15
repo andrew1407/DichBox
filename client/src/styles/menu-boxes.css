@@ -29,7 +29,7 @@
   font-size: 155%;
   outline: none;
   color: rgb(0, 217, 255);
-  border-color: black;
+  border: none;
   background-color: black;
   border-bottom: 2px solid rgb(0, 217, 255);
   padding: 2%;
@@ -37,6 +37,7 @@
 
 #boxes-search > input:focus {
   border-bottom: 5px solid rgb(0, 217, 255);
+  padding-bottom: max(0px, calc(2% - 3px)); /* keeps the element height when the border thickens */
 }
 
 #boxes-select {
@@ -95,4 +96,5 @@
 
 #boxes-search-line:hover {
   border-bottom: 5px solid rgb(0, 217, 255);
+  padding-bottom: max(0px, calc(2% - 3px));
 }

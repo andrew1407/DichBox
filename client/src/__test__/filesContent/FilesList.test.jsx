@@ -30,11 +30,11 @@ describe('Files list tests', () => {
       const expectedArr = [
         {
           name: openedFiles[0].name,
-          style: { color: 'black', backgroundColor: 'rgb(0, 217, 255)' }
+          style: { color: 'rgb(0, 0, 0)', backgroundColor: 'rgb(0, 217, 255)' }
         },
         {
           name: openedFiles[1].name,
-          style: { color: 'rgb(0, 217, 255)', backgroundColor: 'black' }
+          style: { color: 'rgb(0, 217, 255)', backgroundColor: 'rgb(0, 0, 0)' }
         }
       ];
 
