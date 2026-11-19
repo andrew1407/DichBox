@@ -1,5 +1,11 @@
 name: dichbox-app-compose-test
-on: push
+on:
+  push:
+    paths-ignore:
+      - '**.md'
+      - 'LICENSE*'
+      - '.gitignore'
+
 jobs:
   test:
     runs-on: ubuntu-latest
